@@ -273,7 +273,7 @@ body:has(#arrival-dialog:is([data-phase=reveal],[data-phase=handoff])) #universe
 
 /* A small personal album: plain controls, real photographs, less framing. */
 body{background-image:linear-gradient(#f6f9fb40,#f6f9fb40),url(assets/misty-blue-stars-background.png)}
-.universe-heading{top:max(40px,env(safe-area-inset-top));gap:14px}
+.universe-heading{top:max(68px,env(safe-area-inset-top));gap:14px}
 .universe-heading .day-counter h1{font-family:var(--sans);font-size:19px;letter-spacing:0;column-gap:10px;color:#425a67}
 .universe-heading .day-counter h1 i{font-family:var(--sans);font-size:18px}
 .universe-heading .day-counter #days{font-size:45px;color:#425a67}
@@ -305,8 +305,8 @@ dialog::backdrop{background:#e6edf0b8;backdrop-filter:blur(3px)}
 .gift-actions .nav-gift{border-radius:4px;min-width:146px;min-height:54px;padding:12px 20px;background:#fffaf0;color:#405764;transform:rotate(-2deg)}
 .gift-actions .nav-gift:last-child{transform:rotate(2deg)}.gift-actions .nav-gift:hover{background:#fff4dc}.gift-actions .nav-gift b{font-size:13px;letter-spacing:0}.gift-actions .little-orb svg{stroke-width:1.2}
 .completion-center h2{font-family:var(--sans);font-size:21px;letter-spacing:0;color:#405764}.completion-center p{color:#526673;font-size:13px}
-@media(max-width:700px){.universe-heading{top:max(32px,env(safe-area-inset-top));gap:12px}.universe-heading .day-counter h1{font-size:17px;column-gap:8px}.universe-heading .day-counter h1 i{font-size:17px}.universe-heading .day-counter #days{font-size:40px}.universe-heading .date-line{font-size:11px}.universe-heading .bottom-nav button{font-size:12px}.memory-dialog{padding:10px 10px 0}.memory-dialog .close-button{top:16px;right:16px}.memory-info{padding:18px 8px 9px}.memory-info h2{font-size:20px}.memory-paging{margin:0 8px}.map-dialog{padding:32px 22px 24px}#game-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}.game-list-button{font-size:12px}.map-dialog h2{font-size:22px}.gift-actions{gap:18px}.gift-actions .nav-gift{min-width:0;padding:12px 17px}.orbit-progress p{font-size:10px}.orbit-caption{font-size:11px}.orbit-caption b{font-size:17px}#intro-hint{font-size:11px}}
-@media(max-height:700px){.universe-heading{top:max(18px,env(safe-area-inset-top));gap:8px}.universe-heading .day-counter #days{font-size:36px}}
+@media(max-width:700px){.universe-heading{top:max(56px,env(safe-area-inset-top));gap:12px}.universe-heading .day-counter h1{font-size:17px;column-gap:8px}.universe-heading .day-counter h1 i{font-size:17px}.universe-heading .day-counter #days{font-size:40px}.universe-heading .date-line{font-size:11px}.universe-heading .bottom-nav button{font-size:12px}.memory-dialog{padding:10px 10px 0}.memory-dialog .close-button{top:16px;right:16px}.memory-info{padding:18px 8px 9px}.memory-info h2{font-size:20px}.memory-paging{margin:0 8px}.map-dialog{padding:32px 22px 24px}#game-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}.game-list-button{font-size:12px}.map-dialog h2{font-size:22px}.gift-actions{gap:18px}.gift-actions .nav-gift{min-width:0;padding:12px 17px}.orbit-progress p{font-size:10px}.orbit-caption{font-size:11px}.orbit-caption b{font-size:17px}#intro-hint{font-size:11px}}
+@media(max-height:700px){.universe-heading{top:max(42px,env(safe-area-inset-top));gap:8px}.universe-heading .day-counter #days{font-size:36px}}
 
 /* Globe labels can travel outside the viewport while the sphere turns. */
 #universe{overflow:clip}
