@@ -52,3 +52,7 @@ The user-confirmed round-continent preview is now used in the globe. `rounded-la
 ## 2026-11-07 高清录像
 
 两段高清版本来自用户原始 1920×1080、30fps 文件，编码为 H.264/AAC MP4：CRF 22，最高视频码率约 3.2 Mbps、缓冲 6.4 Mbps，2 秒关键帧，faststart。新文件为 `delta-hd.mp4` 与 `poker-hd.mp4`，保留原 540p 流畅版本；省流/慢网优先流畅版，高清连续缓冲时自动切换到流畅版。未修改时长、画面内容、帧率或配音。
+
+## 2026-11-07 完整混合 BGM
+
+`dist/assets/audio/world-full-mix.m4a` 从用户提供的 `ScreenRecording_11-07-2026 12-36-39_1.MP4` 直接抽取首条 AAC 立体声音轨，保留视频中完整约 3 分 52 秒的音乐与人声；音频流原样复制，未做人声分离、消伴奏或二次压缩。主页面与信件页使用此版本，蛋糕页仍使用原 `birthday-warm-piano.mp3`。
