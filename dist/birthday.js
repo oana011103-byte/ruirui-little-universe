@@ -4,7 +4,7 @@ import { createBirthdayConfetti } from './birthday-confetti.js?v=black-confetti-
 const $=selector=>document.querySelector(selector),flames=[...document.querySelectorAll('.candle-flame')],birthdayMusic=$('#birthday-music');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,confetti=createBirthdayConfetti($('#confetti'),reduced);
 const sceneTransition=createSceneTransition(reduced);
-$('.back-link').addEventListener('click',event=>{if(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();sceneTransition.run(()=>location.assign($('.back-link').href),{hold:true})});
+$('.back-link').addEventListener('click',event=>{if(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();if(parent!==window){parent.postMessage({type:'ruirui:birthday-back'},location.origin);return}sceneTransition.run(()=>location.assign($('.back-link').href),{hold:true})});
 let candlesLit=false,activeAudio,songPlaying=false,songRun=0,micStream,micSource,micAnalyser,micTimer,micSamples=0,micRun=0,micFrame=0,leaving=false;
 function message(text){$('#birthday-message').textContent=text}
 function setCandlesLit(lit){candlesLit=lit;$('.cake-illustration').classList.toggle('candles-lit',lit);flames.forEach(flame=>flame.hidden=!lit)}
@@ -40,6 +40,11 @@ attachPixelCursorTrail();
 async function revealBirthdayPage(){
  const artwork=$('.cake-illustration img');
  try{await artwork.decode()}catch{}
- requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.removeAttribute('data-birthday-loading')));
+ if(parent!==window){document.documentElement.removeAttribute('data-birthday-loading');parent.postMessage({type:'ruirui:birthday-ready'},location.origin)}else requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.removeAttribute('data-birthday-loading')));
 }
 revealBirthdayPage();
+
+window.addEventListener('message',event=>{
+ if(parent===window||event.origin!==location.origin||event.source!==parent||event.data?.type!=='ruirui:birthday-reset')return;
+ pause();setCandlesLit(false);$('#light-candles').hidden=false;$('#wish-controls').hidden=true;$('#birthday-done').hidden=true;$('#cake-status').textContent='先点蜡烛吧。';message('');
+});
