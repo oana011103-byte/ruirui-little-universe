@@ -520,3 +520,8 @@ dialog.memory-dialog[open]{display:grid;grid-template-rows:minmax(0,1fr) 84px 52
 .birthday-portal.is-open{visibility:visible;opacity:1;pointer-events:auto}
 .birthday-portal iframe{display:block;width:100%;height:100%;border:0;background:#000;color-scheme:dark}
 body.birthday-open #universe{visibility:hidden}
+
+/* The whole acquaintance line is centered, with one shared type size. */
+.universe-heading .day-counter h1{display:flex;align-items:baseline;justify-content:center;gap:8px;text-align:center;font-size:21px;line-height:1.5}
+.universe-heading .day-counter #days,.universe-heading .day-counter h1 i{font-size:inherit;line-height:inherit;letter-spacing:inherit;text-align:inherit}
+@media(max-width:700px){.universe-heading .day-counter h1{font-size:20px;gap:7px}.universe-heading .day-counter #days{font-size:inherit}}

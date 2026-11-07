@@ -7,7 +7,7 @@
 <title>给瑞瑞的小宇宙</title>
 <link rel="preload" as="image" href="assets/arrival-pencil-ufo.webp">
 <link rel="preload" as="image" href="assets/arrival-fluffy-pair.webp">
-<link rel="stylesheet" href="style.css?v=stable-memory-smooth-route-v1">
+<link rel="stylesheet" href="style.css?v=welcome-hd-v1">
 <link rel="preload" href="assets/oana-soul-hand-cn.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="assets/oana-soul-hand.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="latin-hand.css?v=world-acappella-v1">
@@ -21,7 +21,7 @@
 <div class="arrival-critter critter-white"><span class="critter-sprite"><img src="assets/arrival-fluffy-pair.webp" alt="" width="512" height="341" fetchpriority="high"></span></div>
 <div class="arrival-critter critter-orange"><span class="critter-sprite"><img src="assets/arrival-fluffy-pair.webp" alt="" width="512" height="341" fetchpriority="high"></span></div>
 </div>
-<div class="arrival-message"><h2 id="arrival-title">这是我们相遇的第 <span id="arrival-days">134</span> 天</h2><p id="arrival-caption">一起重温，那些有你的回忆。</p></div>
+<div class="arrival-message"><h2 id="arrival-title">这是我们相遇的第 <span id="arrival-days">134</span> 天</h2><p id="arrival-caption">欢迎进入我们的星球。</p></div>
 <button id="skip-arrival" autofocus>跳过开场 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
 </dialog>
 <script>
@@ -34,7 +34,7 @@
 <section class="day-counter" aria-label="相识纪念日">
 
 <h1>认识的第 <span id="days">—</span> <i>天</i></h1>
-<div class="date-line"><span></span><time datetime="2026-06-22">2026.06.22</time><span>起</span></div>
+
 
 </section>
 <nav class="bottom-nav" aria-label="宇宙探索"><button id="memories-button"><span class="entry-emoji" aria-hidden="true">🌟</span><span>回忆星图</span></button>
@@ -44,7 +44,7 @@
 <div id="earth-scene" tabindex="0" role="group" aria-label="可拖动、滚轮或双指缩放的三维地球；方向键旋转，加减号缩放，0 恢复大小；也可使用回忆清单选择游戏"><canvas id="earth-canvas" aria-label="三维地球"></canvas><div id="beacons"></div><div id="earth-fallback" hidden><div></div></div></div>
 <div id="intro-hint"><span>拖动我，点一颗星星</span></div>
 <div class="bottom-area">
-<div id="orbit-progress" class="orbit-progress" hidden aria-live="polite"><div class="orbit-caption"><span id="progress-label">我们的星轨</span><span><b id="progress-count">0</b><em> / 11</em></span></div><div class="orbit-stage"><svg id="progress-stars" viewBox="0 0 600 100" preserveAspectRatio="none" aria-label="十一颗回忆星组成的星轨"></svg><div id="orbit-stars" aria-hidden="true"></div></div><p id="progress-note">再收集几颗星，听听回忆里的声音。</p></div>
+<div id="orbit-progress" class="orbit-progress" hidden aria-live="polite"><div class="orbit-caption"><span id="progress-label">我们的星轨</span><span><b id="progress-count">0</b><em> / 11</em></span></div><div class="orbit-stage"><svg id="progress-stars" viewBox="0 0 600 100" preserveAspectRatio="none" aria-label="十一颗回忆星组成的星轨"></svg><div id="orbit-stars" aria-hidden="true"></div></div></div>
 <div id="gift-actions" class="gift-actions" role="group" aria-label="生日惊喜" hidden><button id="gift-cake" class="nav-gift" hidden><span class="entry-emoji" aria-hidden="true">🎂</span><b>生日快乐</b></button>
 <button id="gift-letter" class="nav-gift" hidden><span class="entry-emoji" aria-hidden="true">💌</span><b>给你的信</b></button></div>
 </div>
@@ -58,7 +58,7 @@
 <div id="heart-rain" aria-hidden="true"></div><button id="skip-completion" class="text-button">跳过动画</button>
 </dialog>
 <dialog aria-labelledby="memory-title" id="memory-dialog" class="memory-dialog"><button class="close-button" data-close aria-label="关闭回忆">×</button><div class="memory-stage"><div class="memory-photo"><img id="memory-image" alt=""><button id="memory-video" class="memory-play" aria-label="播放游戏录像" hidden><svg class="video-play-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28"/><path class="video-play-triangle" d="m26 19 20 13-20 13Z"/></svg></button></div><video id="memory-player" controls playsinline preload="metadata" hidden></video></div><div class="memory-info"><div><p id="memory-number"></p><h2 id="memory-title"></h2><p id="memory-caption"></p></div></div><div class="memory-paging"><button id="previous-memory" class="text-button">← 上一个</button><button id="next-memory" class="text-button">下一个 →</button></div></dialog>
-<dialog aria-labelledby="map-title" id="map-dialog" class="map-dialog"><button class="close-button" data-close aria-label="关闭星图">×</button><h2 id="map-title">一起玩过的游戏</h2><p class="dialog-lead">点开照片，就能重看。</p><div id="game-list"></div></dialog>
+<dialog aria-label="回忆星图" id="map-dialog" class="map-dialog"><button class="close-button" data-close aria-label="关闭星图">×</button><div id="game-list"></div></dialog>
 
 <dialog aria-label="给瑞瑞的信" id="letter-dialog" class="letter-dialog" data-letter-state="sealed">
 <button class="close-button" data-close aria-label="离开信封">×</button>
@@ -89,6 +89,6 @@
 </div></dialog>
 <dialog aria-labelledby="guide-title" id="guide-dialog" class="guide-dialog"><button class="close-button" data-close aria-label="关闭指南">×</button><h2 id="guide-title">怎么打开回忆</h2><p>转动地球，点开白色星星。看过的会变成黄色。</p><ol><li><b>点亮第一颗星</b><span>属于我们的星轨就会出现。</span></li><li><b>重看游戏录像</b><span>三角洲和梭哈吧朋友的回忆画面，点击中央播放图标即可播放。</span></li><li><b>集齐十一颗星</b><span>星轨连成一颗心，生日星球与信封为你亮起。</span></li></ol><p class="guide-note">也可以打开「回忆星图」选择游戏。地球支持滚轮或双指缩放，方向键旋转，加减号缩放，0 恢复大小；按 Esc 收起弹窗。每次进入都会重新开始点亮星星。</p><button class="primary-button" data-close>知道啦</button></dialog>
 <div id="toast" role="status" aria-live="polite"></div>
-<script src="vendor/d3.min.js"></script><script src="vendor/topojson.min.js"></script><script type="module" src="app.js?v=stable-memory-smooth-route-v1"></script>
+<script src="vendor/d3.min.js"></script><script src="vendor/topojson.min.js"></script><script type="module" src="app.js?v=welcome-hd-v1"></script>
 </body>
 </html>

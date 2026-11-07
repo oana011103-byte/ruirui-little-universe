@@ -1,3 +1,4 @@
+import { createMemoryVideo } from './memory-video.js?v=hd-video-v1';
 import { createBirthdayView } from './birthday-view.js?v=smooth-route-v1';
 import { preloadBirthday } from './birthday-preload.js?v=smooth-route-v1';
 import { createSceneTransition } from './scene-transition.js?v=scene-fade-v1';
@@ -12,6 +13,7 @@ import { createGrainEarth } from './grain-earth.js?v=ice-mint-v1';
 import { attachEarthControls } from './earth-controls.js?v=rounded-zoom-v1';
 const $ = (q) => document.querySelector(q);
 let birthdayActive=false;
+const memoryVideo=createMemoryVideo($('#memory-player'));
 const bgm=createBackgroundMusic({audio:$('#universe-music'),button:$('#music-toggle'),isVideoOpen:()=>birthdayActive||($('#memory-dialog').open&&!$('#memory-player').hidden)});
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const games = [
@@ -57,7 +59,7 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&completio
 function maybeStartCompletion(){if(completionPending&&!completionUnlocked&&!document.querySelector('dialog[open]'))completion.start()}
 let currentGame = 0, lastFocus, toastTimer;
 function toast(message){$('#toast').textContent=message;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),4200)}
-function updateDate(){const date=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const p=Object.fromEntries(date.map(x=>[x.type,x.value]));const day=Math.floor((Date.UTC(+p.year,+p.month-1,+p.day)-Date.UTC(2026,5,22))/86400000)+1;$('#days').textContent=Math.max(1,day);$('#arrival-days').textContent=Math.max(1,day)}
+function updateDate(){const date=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const p=Object.fromEntries(date.map(x=>[x.type,x.value]));const day=Math.floor((Date.UTC(+p.year,+p.month-1,+p.day)-Date.UTC(2026,5,22))/86400000);$('#days').textContent=Math.max(1,day);$('#arrival-days').textContent=Math.max(1,day)}
 updateDate();setInterval(updateDate,60000);
 function openDialog(id){const old=document.querySelector('dialog[open]:not(#scene-transition)');if(old)old.close();lastFocus=document.activeElement;$(id).showModal();bgm.refresh()}
 function closeDialog(dialog){if(dialog.id==='letter-dialog'){sceneTransition.run(()=>dialog.close(),{focus:lastFocus});return}dialog.close();lastFocus?.focus?.({preventScroll:true})}
@@ -69,9 +71,9 @@ $('#gift-cake').onclick=()=>{try{sessionStorage.setItem('ruirui-birthday-return'
 function renderGameList(){$('#game-list').innerHTML='';games.forEach((g,i)=>{const b=document.createElement('button');b.className='game-list-button'+(visited.has(g.id)?' visited':'');b.innerHTML=`<img src="assets/${g.id}.webp" alt=""><span>${g.name}</span><i class="list-dot"></i>`;b.setAttribute('aria-label',g.name+(visited.has(g.id)?'，已点亮':'，尚未点亮'));b.onclick=()=>openMemory(i);$('#game-list').append(b)})}
 function openMemory(i){stopMemoryVideo();currentGame=(i+games.length)%games.length;const g=games[currentGame];setMemoryFraming(g.id);const before=visited.size;visited.add(g.id);if(before<games.length&&visited.size===games.length)completionPending=true;updateProgress();$('#memory-image').src=`assets/${g.id}.webp`;$('#memory-image').alt=`我们一起玩${g.name}的游戏回忆`;$('#memory-title').textContent=g.name;$('#memory-number').textContent=`${currentGame+1} / 11`;$('#memory-caption').textContent=g.caption;$('#memory-video').hidden=!g.video;$('#memory-video').setAttribute('aria-label',`播放${g.name}的游戏录像`);$('#memory-video').onclick=()=>playVideo(g);if(!$('#memory-dialog').open)openDialog('#memory-dialog');if(completionPending){$('#memory-caption').textContent='11 个坐标都看过啦，点下一个。';}$('#intro-hint').classList.add('faded')}
 $('#previous-memory').onclick=()=>openMemory(currentGame-1);$('#next-memory').onclick=handoff.advance;
-function stopMemoryVideo(){const player=$('#memory-player');player.pause();player.hidden=true;if(player.hasAttribute('src')){player.removeAttribute('src');player.load()}$('.memory-photo').hidden=false;bgm.refresh()}
-function playVideo(g){const player=$('#memory-player');player.src=`assets/${g.id}.mp4`;player.poster=`assets/${g.id}.webp`;player.setAttribute('aria-label',g.name+' · 我们的游戏录像');$('.memory-photo').hidden=true;player.hidden=false;bgm.refresh();player.play().catch(()=>{})}
-function updateProgress(){const n=visited.size;if(n>=3){preloadBirthday();birthdayView.prepare().catch(()=>{})}if(n>0)$('#intro-hint').hidden=true;$('#orbit-progress').hidden=n===0||completionUnlocked;$('#gift-actions').hidden=!completionUnlocked;$('#progress-count').textContent=n;$('#progress-label').textContent=completionUnlocked?'都看过啦':'看过的回忆';$('#progress-note').textContent=completionUnlocked?'':n===11?'都看完啦':'点开有播放图标的回忆，就能播放录像';$('#gift-cake').hidden=!completionUnlocked;$('#gift-letter').hidden=!completionUnlocked;renderOrbit();for(const [i,g] of games.entries()){g.button?.classList.toggle('visited',visited.has(g.id));g.button?.setAttribute('aria-label',visited.has(g.id)?`${g.name}，已点亮`:`未点亮的星星 ${i+1}，点击查看回忆`)}}
+function stopMemoryVideo(){memoryVideo.stop();$('#memory-player').hidden=true;$('.memory-photo').hidden=false;bgm.refresh()}
+function playVideo(g){const player=$('#memory-player');player.poster=`assets/${g.id}.webp`;player.setAttribute('aria-label',g.name+' · 我们的游戏录像');$('.memory-photo').hidden=true;player.hidden=false;bgm.refresh();memoryVideo.play(g.id)}
+function updateProgress(){const n=visited.size;if(n>=3){preloadBirthday();birthdayView.prepare().catch(()=>{})}if(n>0)$('#intro-hint').hidden=true;$('#orbit-progress').hidden=n===0||completionUnlocked;$('#gift-actions').hidden=!completionUnlocked;$('#progress-count').textContent=n;$('#progress-label').textContent=completionUnlocked?'都看过啦':'看过的回忆';$('#gift-cake').hidden=!completionUnlocked;$('#gift-letter').hidden=!completionUnlocked;renderOrbit();for(const [i,g] of games.entries()){g.button?.classList.toggle('visited',visited.has(g.id));g.button?.setAttribute('aria-label',visited.has(g.id)?`${g.name}，已点亮`:`未点亮的星星 ${i+1}，点击查看回忆`)}}
 let renderedOrbitCount=-1;
 function renderOrbit(){
  const n=visited.size;if(n===renderedOrbitCount)return;renderedOrbitCount=n;

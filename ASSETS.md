@@ -48,3 +48,7 @@ The user-confirmed round-continent preview is now used in the globe. `rounded-la
 
 - `assets/arrival-pencil-ufo.webp`：基于用户 2026-11-06 彩铅参考图，通过内置 imagegen 分离整理的外星人飞船，透明 WebP 800×533。
 - `assets/arrival-fluffy-pair.webp`：同一参考图中的白色耳机角色与橙色毛绒角色，透明 WebP 512×341。提示词与来源记录于 `docs/arrival-pencil-artwork.md`。
+
+## 2026-11-07 高清录像
+
+两段高清版本来自用户原始 1920×1080、30fps 文件，编码为 H.264/AAC MP4：CRF 22，最高视频码率约 3.2 Mbps、缓冲 6.4 Mbps，2 秒关键帧，faststart。新文件为 `delta-hd.mp4` 与 `poker-hd.mp4`，保留原 540p 流畅版本；省流/慢网优先流畅版，高清连续缓冲时自动切换到流畅版。未修改时长、画面内容、帧率或配音。
