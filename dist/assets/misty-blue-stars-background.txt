@@ -1,0 +1,22 @@
+Generation mode: built-in image_gen
+Generated: 2026-11-02
+Use case: stylized-concept
+Reference: /var/folders/71/nfn68h0n3fs08l1h34s9bk_w0000gn/T/codex-clipboard-3c89800d-56b3-4a6c-957a-2f5c54977a78.png
+Reference role: atmosphere reference only, original composition.
+Source generated file: /Users/oana/.codex/generated_images/01a19ab6-c14f-7853-87ec-e4e658ef748a/exec-41cfce8e-7fd7-4b2b-b82c-6c599dd3d6dd.png
+Dimensions: 1536 x 1024
+Transparent background: false
+
+Exact prompt:
+Use case: stylized-concept
+Asset type: original luminous photographic website background, opaque landscape 1536x1024.
+Primary request: create an original dreamy blue-white mist and pale-blue star background, inspired by the reference's atmospheric soft focus and translucent light, with a newly arranged composition.
+Input image 1 role: atmosphere reference only. Do not copy its exact arrangement.
+Scene/backdrop: bright pearlescent cool ivory and ice-blue haze, defocused translucent curtain-like flowing folds of light moving subtly on diagonals, photographic softness and depth, very fine delicate film grain.
+Subject: approximately 25 small scattered five-point stars, every star PALE SKY BLUE or ICE BLUE ONLY, softly defocused with subtly varied sizes, blur, transparency and rotation. A few very small pale-blue glints in loose sparse groups. No pink, purple, green, or yellow stars.
+Composition: wide landscape; graceful diagonal flowing light folds redistributed from the reference; airy and sparse, center-third fairly quiet but with a few spaced softly blurred blue stars so portrait crops still contain stars. Background should remain understated beneath an interactive Earth and dark indigo website text.
+Lighting/mood: bright, luminous, serene, ethereal and understated; NO dark gray bands, NO strong contrast.
+Palette: dominant #eaf0fa, #d8e6f5, #b4cbed; stars #9fc9eb and #badcf3; very gentle bluish lavender atmosphere allowed, but all stars blue.
+Textures: beautiful photographic blur, translucent layers, delicate haze and fine grain, depth rather than flat CSS gradients.
+Constraints: absolutely no text, no logos, no watermark, no planets, no Earth, no objects, no interface. Opaque full bleed landscape 1536x1024.
+

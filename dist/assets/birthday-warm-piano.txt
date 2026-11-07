@@ -1,0 +1,5 @@
+Birthday music — 2026-11-02
+Original sample-free arrangement rendered with scripts/render-birthday-music.py (NumPy synthesis and ffmpeg MP3 encoding). No external recording or AI music service used.
+Melody: familiar Happy Birthday tune; soft rounded keyboard partials, slow broken chords, 80 BPM with short phrase breaths, overlapping 2.5-second release tails, small diffuse stereo room.
+Duration: 23.59 seconds. Stereo 44.1 kHz, 192 kbps MP3, loudness target -21 LUFS / true-peak ceiling -2 dBTP. Page playback volume .85.
+The exact score, synthesis envelopes, harmony, deterministic seed and mastering commands are in the checked-in renderer. WAV listening master is retained in ../output/birthday-warm-piano.wav outside the hosting archive.

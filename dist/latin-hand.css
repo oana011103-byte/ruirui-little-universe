@@ -1,0 +1,28 @@
+/* The owner's handwriting supplies Latin letters and numerals only. */
+@font-face{
+ font-family:OanaSoulHand;
+ src:url('assets/oana-soul-hand.woff') format('woff');
+ font-weight:400;
+ font-style:normal;
+ font-display:swap;
+ size-adjust:145%;
+ unicode-range:U+0030-0039,U+0041-005A,U+0061-007A,U+00C0-024F,U+1E00-1EFF;
+}
+:root{
+ --sans:OanaSoulHand,'PingFang SC','Noto Sans CJK SC','Microsoft YaHei',sans-serif;
+ --serif:OanaSoulHand,UniverseDisplay,'PingFang SC',sans-serif;
+}
+
+/* The owner's Chinese handwriting is scoped to the requested titles. */
+@font-face{
+ font-family:OanaSoulHandCN;
+ src:url('assets/oana-soul-hand-cn.woff') format('woff');
+ font-weight:400;font-style:normal;font-display:swap;
+ size-adjust:133%;unicode-range:U+4E00-9FFF;
+}
+.universe-heading .day-counter h1,.universe-heading .day-counter h1 i,
+#memories-button,#gift-cake b,#gift-letter b,.owner-hand-title{
+ font-family:OanaSoulHand,OanaSoulHandCN,'PingFang SC',sans-serif;font-weight:400;
+}
+#memories-button,#gift-cake b,#gift-letter b{font-size:16px;letter-spacing:.4px}
+@media(max-width:700px){#memories-button,#gift-cake b,#gift-letter b{font-size:15px}}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN" style="background:#000;color-scheme:dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<style>html,body{background:#000;color-scheme:dark}body{margin:0}html[data-birthday-loading] .birthday-page,html[data-birthday-loading] .back-link{opacity:0}.birthday-page,.back-link{transition:opacity .38s ease-out}@media(prefers-reduced-motion:reduce){.birthday-page,.back-link{transition:none}}</style>
+<script>document.documentElement.setAttribute('data-birthday-loading','');setTimeout(()=>document.documentElement.removeAttribute('data-birthday-loading'),4000);</script>
+<meta name="theme-color" content="#000000"><title>瑞瑞，生日快乐 · 我们的小宇宙</title>
+<meta name="description" content="点亮生日蜡烛，许一个属于你的愿望。">
+<link rel="preload" as="image" href="../assets/birthday-cake-a-sand-unlit.webp" fetchpriority="high">
+<link rel="stylesheet" href="../birthday.css?v=cake-ready-v1">
+<link rel="preload" href="../assets/oana-soul-hand-cn.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="../assets/oana-soul-hand.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="../latin-hand.css?v=pixel-trail-v2">
+<link rel="stylesheet" href="../scene-transition.css?v=scene-fade-v1">
+</head>
+<body>
+<a class="back-link" href="../?from=birthday"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5-7 7 7 7M3 12h18"/></svg><span>返回小宇宙</span></a>
+<main class="birthday-page" aria-labelledby="cake-title">
+<header class="birthday-heading"><h1 id="cake-title">瑞瑞，<span class="owner-hand-title">生日快乐。</span></h1><p id="cake-status" role="status" aria-live="polite">先点蜡烛吧。</p></header>
+<div id="cake-artwork"><div class="cake-illustration"><div class="candle-ambient-light" aria-hidden="true"></div><img src="../assets/birthday-cake-a-sand-unlit.webp" alt="弥散沙画质感的奶油草莓几何蛋糕，三根薄荷条纹蜡烛" width="1254" height="1254" decoding="async" fetchpriority="high"><div class="birthday-flames" aria-hidden="true"><span class="flame-position flame-left"><i class="candle-flame" hidden></i></span><span class="flame-position flame-center"><i class="candle-flame" hidden></i></span><span class="flame-position flame-right"><i class="candle-flame" hidden></i></span></div></div></div>
+<section id="birthday-controls" aria-label="生日许愿">
+<button id="light-candles" class="primary-button">点蜡烛</button>
+<div id="wish-controls" hidden aria-labelledby="wish-prompt"><p id="wish-prompt">许个愿吧。</p><button id="manual-blow" class="wish-blow">吹蜡烛</button><div class="birthday-extras"><button id="birthday-song" class="text-button" aria-label="播放生日歌" aria-pressed="false">音乐关</button><button id="mic-blow" class="text-button">用麦克风吹</button></div></div>
+<div id="birthday-done" hidden><p>瑞瑞，要一直开心。</p><div class="birthday-replay"><button id="relight" class="text-button">再许一个愿望</button><button id="replay-confetti" class="text-button">再撒一次彩带</button></div></div>
+</section>
+</main>
+<audio id="birthday-music" src="../assets/birthday-warm-piano.mp3" preload="metadata"></audio>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<p id="birthday-message" role="status" aria-live="polite"></p>
+<script type="module" src="../birthday.js?v=cake-ready-v1"></script>
+</body></html>

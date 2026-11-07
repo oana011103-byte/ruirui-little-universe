@@ -1,0 +1,30 @@
+# 给瑞瑞的小宇宙
+
+十一段游戏回忆、可拖动地球、像素星轨与爱心、生日蛋糕、可撕开的信封。所有运行资源位于 `dist/`，无需安装依赖或构建。
+
+访问：https://oana011103-byte.github.io/ruirui-little-universe/
+
+## 本地预览
+
+```sh
+python3 -m http.server 4176 --directory dist
+```
+
+打开 http://localhost:4176/ 。请通过 HTTP/HTTPS 访问，JavaScript 模块不支持直接双击 HTML。
+
+## 更新与部署
+
+修改 `dist/` 后提交到 `main`，GitHub Actions 会自动部署。配置位于 `.github/workflows/pages.yml`，也支持手动运行。
+
+- 所有资源使用相对路径，兼容 GitHub Pages 仓库子路径。
+- 三角洲、梭哈吧朋友两段录像无需解锁，点击回忆画面中央播放图标即可播放。
+- 主页使用《全世界陪我失眠》无伴奏版，录像播放时暂停 BGM；蛋糕页保留生日快乐歌。浏览器可能需要首次点击后才能播放背景音乐。
+- 蜡烛初始未点亮。点烛后有暖光与生日歌，吹灭后撒彩带。麦克风仅在主动选择后请求权限，也可直接点击吹灭。
+- 信封展开后显示横线信纸，正文逐字出现；滚动条隐藏但仍可滚动。
+- 新访问重新点亮回忆；生日页返回时保留当次探索状态。
+
+## 维护位置
+
+`dist/app.js`：游戏、认识天数、回忆流程。`dist/style.css`：主页与信件。`dist/birthday/`、`dist/birthday.js`、`dist/birthday.css`：蛋糕页。`dist/assets/`：媒体与字体。素材说明见 `ASSETS.md`。
+
+按拥有者明确选择公开发布，代码及部署资源可通过本仓库访问。

@@ -1,0 +1,5 @@
+#scene-transition{position:fixed;inset:0;margin:0;padding:0;width:100vw;height:100dvh;max-width:none;max-height:none;background:#000;border:0;border-radius:0;box-shadow:none;overflow:hidden;animation:none!important;transition:none;color:transparent}
+#scene-transition::backdrop{background:transparent;backdrop-filter:none}
+body.scene-arrival::after{content:'';position:fixed;inset:0;z-index:2147483647;background:#000;pointer-events:none;animation:scene-arrive 520ms ease-out both}
+@keyframes scene-arrive{from{opacity:1}to{opacity:0}}
+@media(prefers-reduced-motion:reduce){body.scene-arrival::after{animation:none;opacity:0}}

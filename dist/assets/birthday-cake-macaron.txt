@@ -1,0 +1,14 @@
+Mode: built-in image_gen__imagegen; generate, transparent_background=true
+Source path: /Users/oana/.codex/generated_images/01a19ab8-ae90-7272-af70-b23fedcc2cb8/exec-bfcb2a90-aaf0-438e-84ee-6a887f2063e6.png
+Final asset: /Users/oana/Documents/疑难杂症/ruirui-universe/dist/assets/birthday-cake-macaron.png
+
+Exact prompt:
+Use case: illustration-story
+Asset type: original transparent square PNG illustration for a cheerful birthday website; DOM candles will be overlaid separately.
+Primary request: one simple flat macaron-palette whole round birthday cake. Clean flat modern two-dimensional illustration, broad perfectly solid color shapes and crisp smooth antialiased edges. Bright gentle strawberry-pink compact cylindrical cake body, pale vanilla-cream icing oval top and simple rounded wavy drip edge. Thin mint-green oval plate beneath. Exactly three small simple motifs on the front: lavender heart, sky-blue star, lavender heart. A single tiny flat pink strawberry with two small mint leaves sits on the RIGHT of the top. Keep the top center entirely empty for candle placement.
+Scene/backdrop: genuinely transparent alpha background, no background shapes.
+Composition/framing: square canvas, around 1024 by 1024. Draw the entire cake unusually LOW in the square, leaving the upper 38% transparent for future tall candles. The cake and plate span x=10% to 90%. The flat cream oval top surface spans x=14% to 86% and y=43% to 59%. Strawberry centered near x=70%, y=39%. Cake body extends downward to y=85%, and thin mint plate at y=84% to 90%. Cake is a compact single whole cake viewed slightly from above, front visible. All visible artwork must remain within x=10%..90% and y=37%..90%. Future candle insertion points on the clear cream top are x34% y49%, x42% y50%, x50% y47%, x58% y51%, x66% y49%; do not mark or draw them.
+Color palette: cheerful light strawberry pink, pale warm cream, soft lavender, sky blue, mint. Colors clean and gently saturated, no gray cast.
+Materials/textures: absolutely no texture, no grain, no brushwork, no stipple; solid digital flat illustration only.
+Text: none.
+Constraints: no candles, no flames, no text, no lettering, no watermark, no scattered objects. Preserve genuinely transparent background. No dark outlines. No brown/chocolate/gray colors. No retro/vintage style. No gouache, watercolor, oil paint, paper texture, noise, gradients, shading, cast shadows, drop shadows, highlights, gloss, bevels, volumetric lighting, photorealism, or 3D rendering. This must look like very simple friendly flat vector art rendered as a PNG.

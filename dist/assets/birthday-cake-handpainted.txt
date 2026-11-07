@@ -1,0 +1,17 @@
+Mode: Built-in image_gen tool; generate new image; transparent_background=true.
+Source: /Users/oana/.codex/generated_images/01a19aaf-2cf0-7431-9bec-56aed71b4a75/exec-fd728c71-e7f3-4034-bd65-7fcc1e3b925d.png
+Final: /Users/oana/Documents/疑难杂症/ruirui-universe/dist/assets/birthday-cake-handpainted.png
+Dimensions: 1254 x 1254, RGBA; actual transparency alpha extrema 0..255.
+Visible bbox (alpha > 64): x=15..1240, y=326..1192. Very faint alpha noise extends to bbox x=0..1252,y=32..1229; original alpha is preserved.
+Top oval surface approximate bounds: x=115..1155,y=475..746; clear central surface x=360..810,y=520..655.
+Recommended 3 candle base positions normalized to full image: (0.39,0.47), (0.50,0.49), (0.61,0.47). Cherries occupy back right.
+Prompt:
+Use case: illustration-story.
+Asset type: single transparent PNG birthday cake illustration for an interactive birthday website, square canvas.
+Primary request: Create a charming artisan gouache and cut-paper painterly illustration of ONE ROUND whole birthday cake. The supplied style reference was a flat handmade yellow rectangular cake with chocolate icing, green platter and pink poster; use only the warm playful handmade mood, not its rectangular shape, wording, arrangement or design. This must be an original new round cake illustration.
+Subject: round single-tier custard-yellow cake, rich warm cocoa chocolate ganache on top with a wavy irregular drip edge. A sparse scattering of tiny muted blue and coral sprinkles on the chocolate. A few small handdrawn blue frosting stars and hearts on the yellow side, NO lettering. Two little warm red cherries with loose forest-green stems grouped toward the back right edge of the cake top, leaving the central top completely clear. Soft forest-green scalloped ceramic plate beneath it.
+Style/medium: flat warm gouache children's-book illustration, charming irregular hand-cut contours, subtle visible brush grain, handmade matte pigment. Minimal flat-color dimensional cues only. It should feel edible, tender, cheerful and lovingly painted.
+Composition/framing: high-resolution square transparent canvas. Entire cake and plate fully visible, centered horizontally. Cake and platter occupy about 80% of canvas width. Plate baseline at 83% of canvas height. Cake's oval top lies approximately from y=35% to y=52% of canvas, its central surface around y=42%; front cake side extends toward y=75%. Leave the upper 30% of the image empty transparent space so interactive candles can be added later. Straight stable three-quarter front view, no tilted cake.
+Color palette: golden custard, warm dark chocolate, muted cornflower blue, coral red, forest green.
+Scene/backdrop: genuinely transparent alpha background, no paper rectangle, no colored backdrop, no ground plane, no outer drop shadow.
+Constraints: ONE cake only. No candles, no flames, no writing, no numbers, no text, no watermark. No photographic rendering, no 3D render, no gray shading, no metallic tray, no glossy plastic finish. Do not reproduce the reference illustration. Transparent empty space around silhouette.
