@@ -38,3 +38,5 @@ python3 -m http.server 4176 --directory dist
 播放逻辑回归检查：`node --test tests/media.test.mjs`。
 
 三角洲原画保存在同仓库的 `media-original-v1` Release；部署时自动下载至 `dist/assets/delta-original.mp4` 并校验 SHA-256，最终与其他页面资源一起由 GitHub Pages 提供。本地预览原画可先运行同一条 `gh release download` 命令。
+
+BGM 已移除原录屏音源开头 0.8 秒的残音与空白，避免每次刷新重放同一处断点；后续音乐与人声完整保留。
