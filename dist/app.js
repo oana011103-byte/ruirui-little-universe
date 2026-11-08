@@ -1,6 +1,7 @@
+import './focus-modality.js?v=touch-focus-v1';
 import { createMemoryVideo } from './memory-video.js?v=original-video-v2';
-import { createBirthdayView } from './birthday-view.js?v=smooth-route-v1';
-import { preloadBirthday } from './birthday-preload.js?v=smooth-route-v1';
+import { createBirthdayView } from './birthday-view.js?v=touch-focus-v1';
+import { preloadBirthday } from './birthday-preload.js?v=touch-focus-v1';
 import { createSceneTransition } from './scene-transition.js?v=scene-fade-v1';
 import { createBackgroundMusic } from './background-music.js?v=buffered-bgm-v2';
 import { attachPixelCursorTrail } from './pixel-cursor-trail.js?v=pixel-trail-v2';

@@ -1,7 +1,7 @@
 // Keep the universe's document alive so navigation cannot expose a white canvas.
 export function createBirthdayView({transition,onActive,onPending,onError,returnFocus}){
  const universeTitle=document.title;
- const destination=new URL('birthday/?v=smooth-route-v1',location.href);
+ const destination=new URL('birthday/?v=touch-focus-v1',location.href);
  const embedded=new URL(destination);embedded.searchParams.set('embedded','1');
  const portal=document.createElement('section');portal.className='birthday-portal';portal.setAttribute('aria-label','生日快乐');portal.setAttribute('aria-hidden','true');portal.inert=true;document.body.append(portal);
  let frame,ready,resolveReady,rejectReady,timer,entering=false,active=false;

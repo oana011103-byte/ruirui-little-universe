@@ -1,0 +1,5 @@
+/* Default to pointer styling before the main module and dialog autofocus run.
+   Keyboard input restores the existing :focus-visible styles immediately. */
+:root:not([data-focus-input="keyboard"]) :is(button,a,select,video,[tabindex]):focus{
+ outline:none!important;
+}

@@ -1,3 +1,4 @@
+import './focus-modality.js?v=touch-focus-v1';
 import { createSceneTransition } from './scene-transition.js?v=scene-fade-v1';
 import { attachPixelCursorTrail } from './pixel-cursor-trail.js?v=pixel-trail-v2';
 import { createBirthdayConfetti } from './birthday-confetti.js?v=black-confetti-v1';

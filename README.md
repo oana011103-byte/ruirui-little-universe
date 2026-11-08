@@ -40,3 +40,5 @@ python3 -m http.server 4176 --directory dist
 三角洲原画保存在同仓库的 `media-original-v1` Release；部署时自动下载至 `dist/assets/delta-original.mp4` 并校验 SHA-256，最终与其他页面资源一起由 GitHub Pages 提供。本地预览原画可先运行同一条 `gh release download` 命令。
 
 BGM 已移除原录屏音源开头 0.8 秒的残音与空白，避免每次刷新重放同一处断点；后续音乐与人声完整保留。
+
+触摸及鼠标操作不显示键盘焦点框，覆盖开场、回忆弹窗、星星回焦和蛋糕页；键盘操作仍保留原有焦点提示。公共样式及输入方式记录位于 `focus-modality.css`、`focus-modality.js`。
