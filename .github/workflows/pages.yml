@@ -22,6 +22,13 @@ jobs:
       - name: Check application JavaScript
         run: |
           for script in dist/*.js; do node --check "$script"; done
+          node --test tests/*.test.mjs
+      - name: Prepare original Delta video
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download media-original-v1 --repo "$GITHUB_REPOSITORY" --pattern delta-original.mp4 --dir dist/assets
+          echo '466f5d0585af648889d73260a438258b580d77697ce9b1078f9f164ed2479c98  dist/assets/delta-original.mp4' | sha256sum --check
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static website

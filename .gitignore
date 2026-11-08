@@ -2,3 +2,4 @@
 *.tar.gz
 
 .media/
+/dist/assets/delta-original.mp4

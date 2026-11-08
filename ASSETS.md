@@ -56,3 +56,11 @@ The user-confirmed round-continent preview is now used in the globe. `rounded-la
 ## 2026-11-07 完整混合 BGM
 
 `dist/assets/audio/world-full-mix.m4a` 从用户提供的 `ScreenRecording_11-07-2026 12-36-39_1.MP4` 直接抽取首条 AAC 立体声音轨，保留视频中完整约 3 分 52 秒的音乐与人声；音频流原样复制，未做人声分离、消伴奏或二次压缩。主页面与信件页使用此版本，蛋糕页仍使用原 `birthday-warm-piano.mp3`。
+
+## 2026-11-08 三角洲原画与播放缓冲
+
+`dist/assets/delta-original.mp4` 从用户原始《视频 三角洲.mp4》原样复制 H.264 与 AAC 码流，只重新封装并把 MP4 索引移至文件头（faststart）；保留 1920×1080、30fps、约 9.7 Mbps 的源画面，无二次压缩。已校验视频码流 SHA-256 与原始文件一致。三角洲默认原画，备用为已有 1080p 轻量版，不再自动切换至 540p；播放器固定信息行可手动切换，并保留播放位置与暂停状态。
+
+主 BGM 文件未改动（仍是录屏提取的完整音乐与人声），改为提前加载并在首次可闻播放前缓冲至少 8 秒；移动端需要时在实际点击中静音解锁。对话框或生日页打开、页面隐藏时停止地球持续渲染；正常闲置旋转限制为 30fps，拖动保持即时响应。
+
+原画文件通过本仓库 `media-original-v1` Release 保存，避开 Git 数据 API 的大请求限制；CI 下载并核对完整文件 SHA-256 `466f5d0585af648889d73260a438258b580d77697ce9b1078f9f164ed2479c98`，再打包到 Pages。播放器仍使用同站点的相对路径，访客播放无需访问 Release 链接。
